@@ -1,33 +1,18 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import AppLayout from './components/AppLayout.vue'
+import courses from './courses/index.js'
+
+const route = useRoute()
+const isHome = computed(() => route.path === '/')
+
+const currentMenu = computed(() => {
+  return courses.find(c => route.path.startsWith(c.basePath))
+})
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <h1>Claude Study</h1>
-    </div>
-  </header>
-
-  <main>
-    <HelloWorld msg="You did it!" />
-  </main>
+  <router-view v-if="isHome" />
+  <AppLayout v-else-if="currentMenu" :menu="currentMenu" />
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  text-align: center;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-}
-</style>
