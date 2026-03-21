@@ -201,7 +201,7 @@
 }
 .vs-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   padding: 8px 0;
   font-size: 0.95rem;

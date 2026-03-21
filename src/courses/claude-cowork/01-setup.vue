@@ -242,7 +242,7 @@
 }
 .step-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   line-height: 1.6;
 }
@@ -274,7 +274,7 @@
 /* Tip boxes */
 .tip-box {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   margin-top: 16px;
   padding: 16px 20px;

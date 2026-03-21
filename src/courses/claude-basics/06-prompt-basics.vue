@@ -146,7 +146,7 @@
 /* === Definition Card === */
 .definition-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 18px;
   background: #f0f7ff;
   border: 1px solid #bfdbfe;
@@ -302,7 +302,7 @@
 }
 .practice-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   margin-bottom: 20px;
 }

@@ -1,144 +1,128 @@
 <template>
   <div class="page-content">
-    <!-- Hero Section -->
     <div class="hero-section">
       <div class="hero-icon">🧠</div>
       <h1>자동화 컨셉 이해하기</h1>
-      <p class="hero-desc">내 글쓰기 패턴을 학습시켜서, 나와 비슷한 스타일의 블로그 글을 자동으로 작성하는 구조입니다.</p>
+      <p class="hero-desc">주제만 던지면 내 스타일로 블로그 글이 완성되는 자동화를 만듭니다.</p>
     </div>
 
-    <!-- 핵심 아이디어 -->
-    <section class="section-slide">
-      <h2 class="section-title">핵심 아이디어</h2>
-      <p class="section-desc">블로그 글을 처음부터 AI한테 맡기면 "AI가 쓴 티"가 납니다.<br>하지만 <strong>내가 이전에 쓴 글들을 참고 자료로 넣어주면</strong>, Claude가 내 문체, 구성, 톤을 파악해서 비슷한 스타일로 글을 작성합니다.</p>
+    <!-- 우리가 만들어낼 결과물 -->
+    <section>
+      <h2>우리가 만들어낼 결과물</h2>
+      <p>이 튜토리얼을 끝까지 따라하면, 아래와 같은 자동화가 완성됩니다.</p>
 
-      <div class="formula-card">
-        <div class="formula-row">
-          <div class="formula-item">
-            <span class="formula-icon">📝</span>
-            <span class="formula-label">내가 쓴 글</span>
-            <span class="formula-sub">참고 자료</span>
+      <!-- 파이프라인 -->
+      <div class="pipeline">
+        <!-- 입력 -->
+        <div class="pipe-stage input-stage">
+          <div class="pipe-badge">입력</div>
+          <div class="pipe-card">
+            <div class="pipe-icon">💬</div>
+            <div class="pipe-title">주제 전달</div>
+            <div class="pipe-example">"AI 업무 활용법으로 글 써줘"</div>
           </div>
-          <div class="formula-op">+</div>
-          <div class="formula-item">
-            <span class="formula-icon">📐</span>
-            <span class="formula-label">글쓰기 규칙</span>
-            <span class="formula-sub">스킬</span>
+        </div>
+
+        <div class="pipe-connector">
+          <div class="pipe-line"></div>
+          <div class="pipe-dot"></div>
+        </div>
+
+        <!-- 처리 -->
+        <div class="pipe-stage process-stage">
+          <div class="pipe-badge">자동 처리</div>
+          <div class="pipe-double">
+            <div class="pipe-card-mini">
+              <div class="pipe-icon-sm">🎭</div>
+              <div class="pipe-title-sm">페르소나 확인</div>
+              <div class="pipe-desc-sm">내 문체·톤·구성 패턴 적용</div>
+            </div>
+            <div class="pipe-plus">+</div>
+            <div class="pipe-card-mini">
+              <div class="pipe-icon-sm">⚡</div>
+              <div class="pipe-title-sm">글쓰기 스킬 실행</div>
+              <div class="pipe-desc-sm">규칙에 따라 글 작성</div>
+            </div>
           </div>
-          <div class="formula-op">+</div>
-          <div class="formula-item">
-            <span class="formula-icon">💡</span>
-            <span class="formula-label">주제</span>
-            <span class="formula-sub">새로운 토픽</span>
-          </div>
-          <div class="formula-op">=</div>
-          <div class="formula-item result">
-            <span class="formula-icon">✨</span>
-            <span class="formula-label">나와 비슷한 스타일의 새 글</span>
+        </div>
+
+        <div class="pipe-connector">
+          <div class="pipe-line"></div>
+          <div class="pipe-dot"></div>
+        </div>
+
+        <!-- 결과 -->
+        <div class="pipe-stage output-stage">
+          <div class="pipe-badge">결과</div>
+          <div class="pipe-card result-card">
+            <div class="pipe-icon">📄</div>
+            <div class="pipe-title">블로그 글 파일 저장</div>
+            <div class="pipe-file">
+              <span class="file-icon">📝</span>
+              <span class="file-name">AI_업무_활용법.md</span>
+            </div>
           </div>
         </div>
       </div>
+
     </section>
 
-    <!-- 전체 흐름 -->
-    <section class="section-slide">
-      <h2 class="section-title">전체 흐름</h2>
-      <div class="step-cards">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-body">
-            <div class="step-label">글 파일 준비</div>
-            <div class="step-desc">내가 이전에 쓴 블로그 글을 파일로 준비</div>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-body">
-            <div class="step-label">패턴 분석</div>
-            <div class="step-desc">Claude에게 내 글쓰기 패턴을 분석시킴</div>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-body">
-            <div class="step-label">스킬 생성</div>
-            <div class="step-desc">글쓰기 스킬(규칙)을 만듦</div>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <div class="step-body">
-            <div class="step-label">자동 작성</div>
-            <div class="step-desc">주제만 던지면 내 스타일로 글이 완성됨</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 두 가지 방법 -->
-    <section class="section-slide">
-      <h2 class="section-title">두 가지 방법</h2>
-      <p class="section-desc">코워크와 코드, 어떤 걸로 해도 됩니다. 본인 환경에 맞는 걸 선택하세요.</p>
-      <div class="vs-cards">
-        <div class="vs-card">
-          <div class="vs-badge cowork">코워크</div>
-          <div class="vs-feature">
-            <span class="vs-icon">🖥️</span>
-            <div>
-              <div class="vs-label">특징</div>
-              <div class="vs-desc">Claude Desktop에서 GUI로 작업. 파일을 드래그해서 넣고 대화로 진행.</div>
+    <section>
+      <h2>우리가 만들어야 할 것들</h2>
+        <div class="todo-cards">
+          <div class="todo-card">
+            <div class="todo-step">Step 2</div>
+            <div class="todo-icon">🎭</div>
+            <div class="todo-info">
+              <div class="todo-label">페르소나</div>
+              <div class="todo-desc">내 글쓰기 스타일을 정리한 문서</div>
             </div>
           </div>
-          <div class="vs-feature">
-            <span class="vs-icon">👤</span>
-            <div>
-              <div class="vs-label">추천 대상</div>
-              <div class="vs-desc">비개발자, 간단하게 시작하고 싶은 사람</div>
+          <div class="todo-card">
+            <div class="todo-step">Step 3</div>
+            <div class="todo-icon">⚡</div>
+            <div class="todo-info">
+              <div class="todo-label">글쓰기 스킬</div>
+              <div class="todo-desc">페르소나를 기반으로 글을 작성하는 규칙</div>
             </div>
           </div>
         </div>
-        <div class="vs-divider">VS</div>
-        <div class="vs-card">
-          <div class="vs-badge code">코드</div>
-          <div class="vs-feature">
-            <span class="vs-icon">⌨️</span>
-            <div>
-              <div class="vs-label">특징</div>
-              <div class="vs-desc">터미널에서 작업. 스킬 파일을 직접 만들고 세밀하게 제어.</div>
-            </div>
-          </div>
-          <div class="vs-feature">
-            <span class="vs-icon">👤</span>
-            <div>
-              <div class="vs-label">추천 대상</div>
-              <div class="vs-desc">개발자, 고도화·자동화까지 가고 싶은 사람</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- 준비물 -->
-    <section class="section-slide">
-      <h2 class="section-title">준비물</h2>
+    <section>
+      <h2>준비물</h2>
       <div class="prep-cards">
-        <div class="prep-card">
-          <div class="prep-icon">📄</div>
-          <div class="prep-label">내가 이전에 쓴 블로그 글 3~5개 이상</div>
-          <div class="prep-desc">텍스트 파일, 워드, 마크다운 등 아무 형식이나 OK</div>
+        <div class="prep-card main">
+          <div class="prep-icon">📝</div>
+          <div class="prep-info">
+            <strong>내가 작성했던 글 3~5개</strong>
+            <p>블로그, 브런치, 노션 등 어디에 쓴 글이든 상관없습니다. <strong>txt 파일</strong>로 복사해서 준비하세요.</p>
+          </div>
         </div>
         <div class="prep-card">
           <div class="prep-icon">💳</div>
-          <div class="prep-label">Claude 유료 구독</div>
-          <div class="prep-desc">코워크 또는 코드 사용을 위해 필요</div>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon">💡</div>
-          <div class="prep-label">글을 쓸 주제</div>
-          <div class="prep-desc">"AI 업무 활용", "재택근무 팁" 같은 주제</div>
+          <div class="prep-info">
+            <strong>Claude 유료 구독</strong>
+            <p>코워크 기능을 사용하려면 Pro 이상 필요</p>
+          </div>
         </div>
       </div>
+
+      <div class="tip-card">
+        <span class="tip-icon">💡</span>
+        <div>글이 많을수록 내 스타일을 더 정확하게 파악합니다. 최소 3개, 가능하면 5개 이상 준비하세요.</div>
+      </div>
     </section>
+
+    <!-- 준비 완료 체크 -->
+    <div class="checkpoint">
+      <div class="checkpoint-icon">✅</div>
+      <div class="checkpoint-text">
+        <strong>txt 파일 준비 완료!</strong>
+        <p>글 파일이 준비되었으면 다음 단계로 넘어가세요.</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -154,126 +138,244 @@
 .hero-section h1 { color: #f1f5f9; margin-bottom: 12px; }
 .hero-desc { color: #94a3b8 !important; font-size: 1.15rem; margin-bottom: 0 !important; }
 
-.section-slide { margin-bottom: 48px; }
-.section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #1e293b; }
-.section-desc { color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px; }
-
-/* Formula Card */
-.formula-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 32px 24px;
-}
-.formula-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.formula-item {
+/* Pipeline */
+.pipeline {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 16px 20px;
-  min-width: 100px;
-  transition: border-color 0.2s, transform 0.2s;
+  margin: 28px 0;
+  gap: 0;
 }
-.formula-item:hover { border-color: #93c5fd; transform: translateY(-2px); }
-.formula-item.result {
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-  border-color: #93c5fd;
-}
-.formula-icon { font-size: 1.8rem; margin-bottom: 6px; }
-.formula-label { font-weight: 600; color: #1e293b; font-size: 0.95rem; text-align: center; }
-.formula-sub { color: #94a3b8; font-size: 0.8rem; margin-top: 2px; }
-.formula-op { font-size: 1.5rem; font-weight: 700; color: #3b82f6; }
 
-/* Step Cards */
-.step-cards { display: flex; flex-direction: column; gap: 16px; }
-.step-card {
+.pipe-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.pipe-badge {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 5px 16px;
+  border-radius: 20px;
+}
+
+.input-stage .pipe-badge { background: #dbeafe; color: #1d4ed8; }
+.process-stage .pipe-badge { background: #fef3c7; color: #92400e; }
+.output-stage .pipe-badge { background: #dcfce7; color: #166534; }
+
+.pipe-card {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  width: 100%;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.pipe-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.input-stage .pipe-card { border-color: #93c5fd; background: linear-gradient(180deg, #eff6ff 0%, #fff 100%); }
+.result-card { border-color: #86efac !important; background: linear-gradient(180deg, #f0fdf4 0%, #fff 100%) !important; }
+
+.pipe-icon { font-size: 2.4rem; margin-bottom: 8px; }
+.pipe-title { font-weight: 800; color: #1e293b; font-size: 1.15rem; margin-bottom: 6px; }
+.pipe-example {
+  background: #1e293b;
+  color: #a5b4fc;
+  font-size: 0.88rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* Pipe Double (process) */
+.pipe-double {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px 24px;
-  transition: border-color 0.2s, transform 0.2s;
+  gap: 8px;
+  width: 100%;
 }
-.step-card:hover { border-color: #93c5fd; transform: translateY(-2px); }
-.step-number {
+.pipe-card-mini {
+  flex: 1;
+  background: #fff;
+  border: 2px solid #fcd34d;
+  border-radius: 14px;
+  padding: 22px 16px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  background: linear-gradient(180deg, #fffbeb 0%, #fff 100%);
+}
+.pipe-card-mini:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+.pipe-icon-sm { font-size: 2rem; margin-bottom: 6px; }
+.pipe-title-sm { font-weight: 800; color: #1e293b; font-size: 1.05rem; margin-bottom: 4px; }
+.pipe-desc-sm { color: #475569; font-size: 0.92rem; line-height: 1.5; }
+.pipe-plus { font-size: 1.5rem; font-weight: 800; color: #d97706; flex-shrink: 0; }
+
+/* Pipe File */
+.pipe-file {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 6px 14px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+.file-icon { font-size: 0.9rem; }
+.file-name { font-size: 0.82rem; font-weight: 600; color: #166534; font-family: 'JetBrains Mono', monospace; }
+
+/* Connector */
+.pipe-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-shrink: 0;
-  width: 44px; height: 44px;
+  height: 36px;
+  position: relative;
+}
+.pipe-line {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, #cbd5e1, #94a3b8);
+}
+.pipe-dot {
+  position: absolute;
+  bottom: -3px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #94a3b8;
+}
+
+/* Todo Cards */
+.todo-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.todo-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 22px 24px;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.todo-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+.todo-step {
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: #fff;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; font-weight: 700;
-}
-.step-body { flex: 1; }
-.step-label { font-weight: 700; color: #1e293b; font-size: 1.05rem; margin-bottom: 4px; }
-.step-desc { color: #64748b; font-size: 0.95rem; }
-
-/* VS Cards */
-.vs-cards { display: flex; gap: 20px; align-items: stretch; }
-.vs-card {
-  flex: 1;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 24px;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.vs-card:hover { border-color: #93c5fd; transform: translateY(-2px); }
-.vs-badge {
-  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
   padding: 4px 14px;
   border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-}
-.vs-badge.cowork { background: #dbeafe; color: #1d4ed8; }
-.vs-badge.code { background: #fce7f3; color: #be185d; }
-.vs-divider {
+  white-space: nowrap;
   flex-shrink: 0;
-  display: flex; align-items: center;
-  font-weight: 800; font-size: 1.1rem; color: #94a3b8;
 }
-.vs-feature { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
-.vs-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
-.vs-label { font-weight: 600; color: #1e293b; font-size: 0.95rem; }
-.vs-desc { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
+.todo-icon { font-size: 2.2rem; flex-shrink: 0; }
+.todo-info { flex: 1; }
+.todo-label { font-size: 1.1rem; font-weight: 800; color: #1e293b; margin-bottom: 2px; }
+.todo-desc { font-size: 0.92rem; color: #64748b; line-height: 1.5; }
 
 /* Prep Cards */
-.prep-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.prep-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
 .prep-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 24px 20px;
-  text-align: center;
-  transition: border-color 0.2s, transform 0.2s;
+  padding: 20px;
 }
-.prep-card:hover { border-color: #93c5fd; transform: translateY(-2px); }
-.prep-icon { font-size: 2rem; margin-bottom: 10px; }
-.prep-label { font-weight: 700; color: #1e293b; font-size: 0.95rem; margin-bottom: 6px; }
-.prep-desc { color: #64748b; font-size: 0.85rem; line-height: 1.5; }
+.prep-card.main {
+  background: #fffbeb;
+  border-color: #fcd34d;
+}
+.prep-icon { font-size: 1.8rem; flex-shrink: 0; }
+.prep-info strong {
+  display: block;
+  color: #1e293b;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.prep-info p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0 !important;
+  line-height: 1.5;
+}
 
-/* Responsive */
+/* Tip Card */
+.tip-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: #1e40af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.tip-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+/* Checkpoint */
+.checkpoint {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid #86efac;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 32px;
+}
+.checkpoint-icon { font-size: 2rem; flex-shrink: 0; }
+.checkpoint-text strong {
+  display: block;
+  color: #166534;
+  font-size: 1.05rem;
+  margin-bottom: 2px;
+}
+.checkpoint-text p {
+  color: #15803d;
+  font-size: 0.9rem;
+  margin: 0 !important;
+}
+
 @media (max-width: 768px) {
   .hero-section { padding: 32px 18px 28px; }
   .hero-section h1 { font-size: 1.4rem; }
-  .formula-row { flex-direction: column; gap: 8px; }
-  .formula-op { font-size: 1.2rem; }
-  .vs-cards { flex-direction: column; }
-  .vs-divider { justify-content: center; padding: 4px 0; }
-  .prep-cards { grid-template-columns: 1fr; }
-  .step-card { padding: 16px; gap: 14px; }
+  .pipe-double { flex-direction: column; gap: 8px; }
 }
 </style>

@@ -215,7 +215,7 @@ description: 배포 전에 문제가 없는지 확인합니다
 
 .analogy-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
@@ -272,7 +272,7 @@ description: 배포 전에 문제가 없는지 확인합니다
 
 .warning-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   background: #fef3c7;
   border: 1px solid #fde68a;

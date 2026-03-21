@@ -103,7 +103,7 @@
 .tag { background: rgba(99,102,241,0.15); color: #a5b4fc; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; border: 1px solid rgba(99,102,241,0.25); }
 
 /* === Key Message === */
-.key-message { display: flex; align-items: flex-start; gap: 16px; background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.key-message { display: flex; align-items: center; gap: 16px; background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 24px; margin: 20px 0; }
 .key-icon { font-size: 2rem; flex-shrink: 0; }
 .key-message p { margin: 0 !important; font-size: 1rem; color: #334155; line-height: 1.7; }
 .key-message strong { color: #1e40af; }
@@ -130,7 +130,7 @@
   .hero-section { padding: 36px 20px 32px; }
   .hero-section h1 { font-size: 1.6rem; }
   .git-grid { grid-template-columns: 1fr; }
-  .safety-card { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .safety-card { flex-direction: column; align-items: center; gap: 8px; }
   .key-message { flex-direction: column; gap: 12px; }
 }
 </style>

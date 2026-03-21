@@ -235,7 +235,7 @@ claude</pre>
 .check-item {
   flex: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -370,7 +370,7 @@ claude</pre>
   flex: 1;
   display: flex;
   gap: 14px;
-  align-items: flex-start;
+  align-items: center;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 12px;

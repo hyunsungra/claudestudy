@@ -380,7 +380,7 @@
 
 .permission-example-box {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   margin-top: 16px;
   padding: 16px 20px;

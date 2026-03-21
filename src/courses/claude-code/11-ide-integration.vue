@@ -163,7 +163,7 @@
 
 /* === Step Cards === */
 .step-cards { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
-.step-card { display: flex; align-items: flex-start; gap: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 24px; transition: border-color 0.2s, transform 0.2s; }
+.step-card { display: flex; align-items: center; gap: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 24px; transition: border-color 0.2s, transform 0.2s; }
 .step-card:hover { border-color: #93c5fd; transform: translateY(-2px); }
 .step-number { width: 36px; height: 36px; background: linear-gradient(135deg, #3b82f6, #6366f1); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; flex-shrink: 0; }
 .step-body strong { display: block; font-size: 1.05rem; color: #1e293b; margin-bottom: 4px; }
@@ -194,6 +194,6 @@
   .analogy-vs { padding: 4px 0; }
   .editor-cards { grid-template-columns: 1fr; }
   .benefit-grid { grid-template-columns: 1fr; }
-  .compare-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .compare-row { flex-direction: column; align-items: center; gap: 8px; }
 }
 </style>

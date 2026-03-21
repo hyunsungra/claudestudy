@@ -183,7 +183,7 @@ Vue 3와 Vite를 사용하고 있습니다.
 
 .analogy-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
@@ -259,7 +259,7 @@ Vue 3와 Vite를 사용하고 있습니다.
 .tip-list { display: flex; flex-direction: column; gap: 12px; }
 .tip-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;

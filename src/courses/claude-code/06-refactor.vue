@@ -114,7 +114,7 @@
 .tag { background: rgba(99,102,241,0.15); color: #a5b4fc; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; border: 1px solid rgba(99,102,241,0.25); }
 
 /* === Key Message === */
-.key-message { display: flex; align-items: flex-start; gap: 16px; background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.key-message { display: flex; align-items: center; gap: 16px; background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 24px; margin: 20px 0; }
 .key-icon { font-size: 2rem; flex-shrink: 0; }
 .key-message p { margin: 0 !important; font-size: 1rem; color: #334155; line-height: 1.7; }
 .key-message strong { color: #1e40af; }

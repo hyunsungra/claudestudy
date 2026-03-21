@@ -1,119 +1,129 @@
 <template>
   <div class="page-content">
-    <!-- Hero Section -->
     <div class="hero-section">
       <div class="hero-icon">⚡</div>
-      <h1>서브에이전트로 대량 작성</h1>
-      <p class="hero-desc">주제를 먼저 만들고, 확인 후 여러 글을 동시에 작성하는 방법입니다.</p>
+      <h1>서브에이전트로 병렬 작성</h1>
+      <p class="hero-desc">글 작성부터 검증, 이미지 생성까지 모든 과정을 자동으로 처리하는 에이전트를 만듭니다.</p>
     </div>
 
-    <!-- 흐름 -->
-    <section class="section-slide">
-      <h2 class="section-title">흐름</h2>
-      <div class="process-cards">
-        <div class="process-card">
-          <div class="process-num">1</div>
-          <div class="process-body">
-            <div class="process-label">주제 생성 요청</div>
-            <div class="process-desc">"이번 달 블로그 주제 5개 만들어줘"</div>
-          </div>
+    <!-- 에이전트 만들기 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">1</div>
+        <h2>블로그 자동화 에이전트 만들기</h2>
+      </div>
+      <p>지금까지 만든 스킬들(글쓰기, 검증, 이미지)을 하나로 묶어서 전체 과정을 자동 처리하는 에이전트를 만듭니다. 아래 프롬프트를 복사해서 코워크에 붙여넣으세요.</p>
+
+      <div class="prompt-card highlight">
+        <div class="prompt-label">코워크에 입력 (핵심 프롬프트)</div>
+        <div class="code-block good">
+          <pre>현재 폴더에 blog-automation이라는 이름의 에이전트를 만들어줘.
+
+에이전트 이름: blog-automation
+에이전트 설명: topics.md에서 미작성 주제를 읽어 글 작성, 검증, 이미지 생성까지 자동 처리하는 에이전트
+
+에이전트가 실행되면 다음 순서로 동작해야 해:
+
+1. topics.md에서 미작성 주제 목록을 확인한다
+2. 사용자에게 몇 개의 주제를 처리할지 물어본다
+3. 선택된 주제들을 서브에이전트로 병렬 처리한다
+   - 각 주제마다 독립적인 서브에이전트가 할당됨
+4. 각 서브에이전트는 다음을 순서대로 실행한다:
+   a. blog-writer 스킬로 글 작성
+   b. fact-checker 스킬로 사실 검증 및 수정
+   c. image-card-maker 스킬로 이미지 카드 생성
+5. 모든 서브에이전트가 완료되면 topics.md를 업데이트한다
+6. 최종 처리 결과를 요약해서 보여준다</pre>
         </div>
-        <div class="process-card">
-          <div class="process-num">2</div>
-          <div class="process-body">
-            <div class="process-label">사용자 컨펌</div>
-            <div class="process-desc">주제 목록을 확인하고 수정/승인</div>
-          </div>
+      </div>
+
+      <div class="checkpoint mini">
+        <span class="checkpoint-icon">✅</span>
+        <span class="checkpoint-text-inline">.claude/agents/blog-automation.md 파일이 생성되었으면 다음으로</span>
+      </div>
+    </section>
+
+    <!-- 에이전트 실행 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">2</div>
+        <h2>에이전트 실행하기</h2>
+      </div>
+      <p>에이전트를 실행하면 미작성 주제가 자동으로 표시됩니다. 상황에 맞는 프롬프트를 복사해서 사용하세요.</p>
+
+      <div class="prompt-card">
+        <div class="prompt-label">기본 실행 — 개수 선택</div>
+        <div class="code-block good">
+          <pre>미작성 주제 중 하나를 서브에이전트로 작성해줘</pre>
         </div>
-        <div class="process-card">
-          <div class="process-num">3</div>
-          <div class="process-body">
-            <div class="process-label">병렬 작성</div>
-            <div class="process-desc">승인된 주제들을 서브에이전트가 동시에 작성</div>
-          </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">개수 지정 실행</div>
+        <div class="code-block good">
+          <pre>미작성 주제 중 5개를 서브에이전트로 처리해줘</pre>
         </div>
-        <div class="process-card">
-          <div class="process-num">4</div>
-          <div class="process-body">
-            <div class="process-label">결과 확인</div>
-            <div class="process-desc">output 폴더에 5개 글이 한 번에 생성됨</div>
-          </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">전체 실행</div>
+        <div class="code-block good">
+          <pre>미작성 주제 전부 서브에이전트로 처리해줘</pre>
         </div>
       </div>
     </section>
 
-    <!-- 실전 사용법 -->
-    <section class="section-slide">
-      <h2 class="section-title">실전 사용법</h2>
-
-      <div class="prompt-card">
-        <div class="prompt-badge step1">1. 주제 먼저 만들기</div>
-        <div class="code-block good">
-          <pre>"클라우드 업무 도구" 카테고리로
-이번 달 블로그 주제 5개를 만들어줘.
-
-조건:
-- 검색량이 높을 만한 실용적인 주제
-- 내 기존 글과 겹치지 않게 (topics.md 참고)
-- 주제마다 핵심 키워드 3개도 같이 정리</pre>
-        </div>
+    <!-- 병렬 처리 시각화 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">3</div>
+        <h2>병렬 처리 과정</h2>
       </div>
-
-      <p class="section-desc">Claude가 주제 5개를 제안합니다. 확인하고 수정할 것이 있으면 수정합니다.</p>
-
-      <div class="prompt-card">
-        <div class="prompt-badge step2">2. 확인 후 작성 지시</div>
-        <div class="code-block good">
-          <pre>좋아. 이 5개 주제로 전부 글 써줘.
-내 스타일대로, 각각 output 폴더에 저장해줘.
-topics.md도 업데이트해줘.</pre>
-        </div>
-      </div>
-    </section>
-
-    <!-- 서브에이전트가 동시에 작성 -->
-    <section class="section-slide">
-      <h2 class="section-title">서브에이전트가 동시에 작성</h2>
+      <p>서브에이전트가 각 주제를 동시에 처리합니다. 하나씩 순서대로 하는 게 아니라 동시에 진행되기 때문에 시간이 크게 절약됩니다.</p>
 
       <div class="parallel-visual">
         <div class="parallel-hub">
           <div class="hub-icon">🤖</div>
-          <div class="hub-label">Claude</div>
+          <div class="hub-label">blog-automation</div>
         </div>
         <div class="parallel-branches">
           <div class="branch-item">
             <div class="branch-line"></div>
             <div class="branch-card">
               <span class="branch-tag">A</span>
-              <span>클라우드 스토리지 비교</span>
+              <div class="branch-flow">
+                <span class="flow-step-mini">글쓰기</span>
+                <span class="flow-arrow-mini">→</span>
+                <span class="flow-step-mini">검증</span>
+                <span class="flow-arrow-mini">→</span>
+                <span class="flow-step-mini">이미지</span>
+              </div>
             </div>
           </div>
           <div class="branch-item">
             <div class="branch-line"></div>
             <div class="branch-card">
               <span class="branch-tag">B</span>
-              <span>팀 협업 도구 추천</span>
+              <div class="branch-flow">
+                <span class="flow-step-mini">글쓰기</span>
+                <span class="flow-arrow-mini">→</span>
+                <span class="flow-step-mini">검증</span>
+                <span class="flow-arrow-mini">→</span>
+                <span class="flow-step-mini">이미지</span>
+              </div>
             </div>
           </div>
           <div class="branch-item">
             <div class="branch-line"></div>
             <div class="branch-card">
               <span class="branch-tag">C</span>
-              <span>자동화 도구 활용법</span>
-            </div>
-          </div>
-          <div class="branch-item">
-            <div class="branch-line"></div>
-            <div class="branch-card">
-              <span class="branch-tag">D</span>
-              <span>보안 체크리스트</span>
-            </div>
-          </div>
-          <div class="branch-item">
-            <div class="branch-line"></div>
-            <div class="branch-card">
-              <span class="branch-tag">E</span>
-              <span>비용 절감 사례</span>
+              <div class="branch-flow">
+                <span class="flow-step-mini">글쓰기</span>
+                <span class="flow-arrow-mini">→</span>
+                <span class="flow-step-mini">검증</span>
+                <span class="flow-arrow-mini">→</span>
+                <span class="flow-step-mini">이미지</span>
+              </div>
             </div>
           </div>
         </div>
@@ -121,44 +131,83 @@ topics.md도 업데이트해줘.</pre>
 
       <div class="speed-card">
         <span class="speed-icon">🚀</span>
-        <span>하나씩 순서대로 쓰는 게 아니라 <strong>동시에 작성</strong>하기 때문에, 5개를 써도 1개 쓰는 시간과 비슷합니다.</span>
+        <span>3개 주제를 처리해도 1개 처리하는 시간과 비슷합니다. 주제가 많을수록 효과가 큽니다.</span>
       </div>
     </section>
 
-    <!-- 완성 후 일괄 검토 -->
-    <section class="section-slide">
-      <h2 class="section-title">완성 후 일괄 검토</h2>
+    <!-- 결과물 확인 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">4</div>
+        <h2>결과물 확인</h2>
+      </div>
+      <p>에이전트가 완료되면 각 주제별로 글, 검증 결과, 이미지 카드가 모두 생성되어 있습니다.</p>
 
-      <div class="prompt-card">
-        <div class="prompt-badge review">검토 요청</div>
-        <div class="code-block">
-          <pre>output 폴더에 오늘 만든 글들을 전부 읽고,
-각 글의 품질을 체크해줘.
-
-체크 항목:
-- 내 글쓰기 스타일과 맞는지
-- 내용이 충분한지
-- 오탈자나 어색한 표현은 없는지
-
-문제가 있는 부분만 알려줘.</pre>
+      <div class="result-preview">
+        <div class="result-header">
+          <span class="result-file">📁 블로그자동화/</span>
+        </div>
+        <div class="result-body">
+          <div class="result-row folder">
+            <span class="result-icon">📁</span>
+            <span class="result-name">AI_이메일_작성_시간_줄이기/</span>
+            <span class="result-tag post">주제 폴더</span>
+          </div>
+          <div class="result-row sub">
+            <span class="result-icon">📄</span>
+            <span class="result-name">AI_이메일_작성_시간_줄이기.md</span>
+            <span class="result-tag post">글</span>
+          </div>
+          <div class="result-row sub">
+            <span class="result-icon">📄</span>
+            <span class="result-name">AI_이메일_작성_시간_줄이기_검증결과.md</span>
+            <span class="result-tag review">검증</span>
+          </div>
+          <div class="result-row sub">
+            <span class="result-icon">📁</span>
+            <span class="result-name">이미지/</span>
+            <span class="result-tag img">이미지</span>
+          </div>
+          <div class="result-row dim folder">
+            <span class="result-icon">📁</span>
+            <span class="result-name">회의록_자동_정리하는_방법/</span>
+            <span class="result-tag post">주제 폴더</span>
+          </div>
+          <div class="result-row dim sub">
+            <span class="result-icon">📄</span>
+            <span class="result-name">회의록_자동_정리하는_방법.md</span>
+            <span class="result-tag post">글</span>
+          </div>
+          <div class="result-row dim sub">
+            <span class="result-icon">📄</span>
+            <span class="result-name">회의록_자동_정리하는_방법_검증결과.md</span>
+            <span class="result-tag review">검증</span>
+          </div>
+          <div class="result-row dim sub">
+            <span class="result-icon">📁</span>
+            <span class="result-name">이미지/</span>
+            <span class="result-tag img">이미지</span>
+          </div>
+          <div class="result-row more">
+            <span>...</span>
+          </div>
         </div>
       </div>
 
-      <div class="check-grid">
-        <div class="check-item">
-          <span class="check-icon">🎨</span>
-          <span class="check-label">스타일 일치</span>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">📊</span>
-          <span class="check-label">내용 충분</span>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">✏️</span>
-          <span class="check-label">맞춤법/표현</span>
-        </div>
+      <div class="tip-card">
+        <span class="tip-icon">💡</span>
+        <div>topics.md도 자동으로 업데이트되어 있습니다. 처리된 주제는 모두 ✅ 완료 상태로 바뀌어 있습니다.</div>
       </div>
     </section>
+
+    <!-- 최종 체크포인트 -->
+    <div class="checkpoint">
+      <div class="checkpoint-icon-big">🎉</div>
+      <div class="checkpoint-content">
+        <strong>블로그 완전 자동화 완성!</strong>
+        <p>주제 선택부터 글 작성, 사실 검증, 이미지 생성까지 모든 과정이 자동으로 처리됩니다. 에이전트 한 번 실행으로 여러 편의 블로그 글이 완성됩니다.</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -174,152 +223,133 @@ topics.md도 업데이트해줘.</pre>
 .hero-section h1 { color: #f1f5f9; margin-bottom: 12px; }
 .hero-desc { color: #94a3b8 !important; font-size: 1.15rem; margin-bottom: 0 !important; }
 
-.section-slide { margin-bottom: 48px; }
-.section-title { font-size: 1.5rem; font-weight: 700; color: #1e293b; margin-bottom: 16px; }
-.section-desc { color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px; }
-
-/* Process Cards */
-.process-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.process-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px 16px;
-  text-align: center;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.process-card:hover { border-color: #93c5fd; transform: translateY(-2px); }
-.process-num {
-  width: 36px; height: 36px;
+.step-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.step-circle {
+  flex-shrink: 0; width: 40px; height: 40px;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: #fff; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 0.95rem;
-  margin: 0 auto 12px;
+  font-size: 1.1rem; font-weight: 700;
 }
-.process-label { font-weight: 700; color: #1e293b; font-size: 0.95rem; margin-bottom: 6px; }
-.process-desc { color: #64748b; font-size: 0.85rem; line-height: 1.5; }
+.step-header h2 { margin: 0; font-size: 1.3rem; }
 
-/* Prompt Card */
 .prompt-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px 24px;
-  margin-bottom: 20px;
+  background: #f8fafc; border: 1px solid #e2e8f0;
+  border-radius: 12px; padding: 20px 24px; margin: 16px 0;
 }
-.prompt-badge {
-  display: inline-block;
-  padding: 3px 12px;
-  border-radius: 16px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  margin-bottom: 12px;
-}
-.prompt-badge.step1 { background: #dbeafe; color: #1d4ed8; }
-.prompt-badge.step2 { background: #dcfce7; color: #15803d; }
-.prompt-badge.review { background: #fef3c7; color: #92400e; }
+.prompt-card.highlight { background: #fffbeb; border-color: #fcd34d; }
+.prompt-label { font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 0.92rem; }
 
 /* Parallel Visual */
 .parallel-visual {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  margin-bottom: 20px;
-  padding: 24px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  display: flex; align-items: center; gap: 24px;
+  margin: 20px 0; padding: 24px;
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;
 }
 .parallel-hub {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
-  padding-top: 40px;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 6px; flex-shrink: 0;
 }
 .hub-icon { font-size: 2.2rem; }
-.hub-label { font-weight: 700; color: #1e293b; font-size: 0.95rem; }
-.parallel-branches {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+.hub-label { font-weight: 700; color: #1e293b; font-size: 0.85rem; }
+.parallel-branches { flex: 1; display: flex; flex-direction: column; gap: 10px; }
 .branch-item { display: flex; align-items: center; gap: 8px; }
-.branch-line {
-  width: 30px;
-  height: 2px;
-  background: #cbd5e1;
-  flex-shrink: 0;
-}
+.branch-line { width: 30px; height: 2px; background: #cbd5e1; flex-shrink: 0; }
 .branch-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 10px 16px;
-  flex: 1;
-  font-size: 0.9rem;
-  color: #334155;
+  display: flex; align-items: center; gap: 12px;
+  background: #fff; border: 1px solid #e2e8f0;
+  border-radius: 8px; padding: 12px 16px; flex: 1;
   transition: border-color 0.2s;
 }
 .branch-card:hover { border-color: #93c5fd; }
 .branch-tag {
-  flex-shrink: 0;
-  width: 26px; height: 26px;
-  background: #e0e7ff;
-  color: #3730a3;
-  border-radius: 50%;
+  flex-shrink: 0; width: 26px; height: 26px;
+  background: #e0e7ff; color: #3730a3; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 0.78rem;
 }
+.branch-flow { display: flex; align-items: center; gap: 6px; }
+.flow-step-mini {
+  font-size: 0.8rem; font-weight: 600; color: #475569;
+  background: #f1f5f9; padding: 3px 8px; border-radius: 6px;
+}
+.flow-arrow-mini { color: #94a3b8; font-size: 0.75rem; }
 
-/* Speed Card */
 .speed-card {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  display: flex; gap: 10px; align-items: center;
   background: linear-gradient(135deg, #eff6ff, #dbeafe);
-  border: 1px solid #93c5fd;
-  border-radius: 12px;
-  padding: 16px 20px;
-  font-size: 0.95rem;
-  color: #1e40af;
+  border: 1px solid #93c5fd; border-radius: 12px;
+  padding: 18px 22px; font-size: 0.95rem; color: #1e40af;
 }
 .speed-icon { font-size: 1.3rem; flex-shrink: 0; }
 
-/* Check Grid */
-.check-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+/* Result Preview */
+.result-preview {
+  background: #f8fafc; border: 1px solid #e2e8f0;
+  border-radius: 12px; overflow: hidden; margin: 16px 0;
 }
-.check-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px 14px;
-  transition: border-color 0.2s, transform 0.2s;
+.result-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; background: #f1f5f9; border-bottom: 1px solid #e2e8f0;
 }
-.check-item:hover { border-color: #93c5fd; transform: translateY(-2px); }
-.check-icon { font-size: 1.6rem; }
-.check-label { font-weight: 700; color: #1e293b; font-size: 0.9rem; }
+.result-file { font-weight: 700; color: #1e293b; font-size: 0.95rem; }
+.result-body { padding: 12px 20px; }
+.result-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 4px; border-bottom: 1px solid #f1f5f9;
+  font-size: 0.88rem; color: #334155;
+}
+.result-row:last-child { border-bottom: none; }
+.result-row.sub { padding-left: 28px; }
+.result-row.folder { font-weight: 700; }
+.result-row.dim { color: #94a3b8; }
+.result-row.more { color: #94a3b8; justify-content: center; }
+.result-icon { font-size: 1rem; flex-shrink: 0; }
+.result-name { flex: 1; }
+.result-tag {
+  margin-left: auto; font-size: 0.72rem; padding: 2px 8px;
+  border-radius: 8px; font-weight: 600; flex-shrink: 0;
+}
+.result-tag.post { background: #dbeafe; color: #1d4ed8; }
+.result-tag.review { background: #dcfce7; color: #166534; }
+.result-tag.img { background: #fce7f3; color: #be185d; }
+
+.tip-card {
+  display: flex; gap: 12px; align-items: center;
+  background: #eff6ff; border: 1px solid #bfdbfe;
+  border-radius: 12px; padding: 18px 22px;
+  color: #1e40af; font-size: 0.95rem; line-height: 1.6;
+}
+.tip-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+.checkpoint.mini {
+  display: flex; align-items: center; gap: 10px;
+  background: #f0fdf4; border: 1px solid #bbf7d0;
+  border-radius: 10px; padding: 12px 18px; margin: 16px 0;
+}
+.checkpoint.mini .checkpoint-icon { font-size: 1.2rem; }
+.checkpoint-text-inline { color: #166534; font-size: 0.9rem; font-weight: 600; }
+
+.checkpoint {
+  display: flex; align-items: center; gap: 16px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid #86efac; border-radius: 12px;
+  padding: 24px; margin-top: 32px;
+}
+.checkpoint-icon-big { font-size: 2.2rem; flex-shrink: 0; }
+.checkpoint-content strong { display: block; color: #166534; font-size: 1.1rem; margin-bottom: 4px; }
+.checkpoint-content p { color: #15803d; font-size: 0.9rem; margin: 0 !important; line-height: 1.5; }
 
 @media (max-width: 768px) {
   .hero-section { padding: 32px 18px 28px; }
   .hero-section h1 { font-size: 1.4rem; }
-  .process-cards { grid-template-columns: repeat(2, 1fr); }
-  .parallel-visual { flex-direction: column; align-items: center; gap: 16px; }
-  .parallel-hub { padding-top: 0; flex-direction: row; gap: 10px; }
+  .step-header h2 { font-size: 1.1rem; }
+  .step-circle { width: 34px; height: 34px; font-size: 0.95rem; }
+  .parallel-visual { flex-direction: column; gap: 16px; }
+  .parallel-hub { flex-direction: row; gap: 10px; }
   .branch-line { width: 20px; }
-  .check-grid { grid-template-columns: 1fr; }
+  .flow-step-mini { font-size: 0.72rem; }
+  .result-row.sub { padding-left: 16px; }
+  .result-tag { display: none; }
 }
 </style>

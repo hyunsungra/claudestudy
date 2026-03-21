@@ -459,7 +459,7 @@
 /* === Tip Box === */
 .tip-box {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
@@ -761,7 +761,7 @@
 }
 .practice-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   margin-bottom: 20px;
 }

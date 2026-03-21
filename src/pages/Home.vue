@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import courses from '../courses/index.js'
+import { categories } from '../courses/index.js'
 
 const router = useRouter()
 
@@ -24,25 +24,45 @@ function getTotalCount(course) {
     </header>
 
     <div class="home-body">
-      <div class="course-grid">
-        <button
-          v-for="course in courses"
-          :key="course.basePath"
-          class="course-card"
-          @click="goToCourse(course)"
-        >
-          <span class="course-icon">{{ course.icon }}</span>
-          <div class="course-info">
-            <h2 class="course-title">{{ course.title }}</h2>
-            <p class="course-desc">{{ course.description }}</p>
-            <div class="course-meta">
-              <span class="meta-item">{{ course.sections.length }}개 섹션</span>
-              <span class="meta-dot">·</span>
-              <span class="meta-item">{{ getTotalCount(course) }}개 주제</span>
-            </div>
+      <div v-for="cat in categories" :key="cat.id" class="category-section">
+        <div class="category-header">
+          <div class="category-badge" :class="cat.id">{{ cat.id === 'basics' ? '📚' : '🛠️' }}</div>
+          <div>
+            <h2 class="category-title">{{ cat.title }}</h2>
+            <p class="category-desc">{{ cat.description }}</p>
           </div>
-          <span class="course-arrow">→</span>
-        </button>
+        </div>
+
+        <div class="course-grid">
+          <button
+            v-for="course in cat.courses"
+            :key="course.basePath"
+            class="course-card"
+            @click="goToCourse(course)"
+          >
+            <span class="course-icon">{{ course.icon }}</span>
+            <div class="course-info">
+              <div class="course-title-row">
+                <h2 class="course-title">{{ course.title }}</h2>
+                <div v-if="course.tags" class="course-tags">
+                  <span
+                    v-for="tag in course.tags"
+                    :key="tag"
+                    class="course-tag"
+                    :class="{ cowork: tag === '코워크', code: tag === '코드' }"
+                  >{{ tag }}</span>
+                </div>
+              </div>
+              <p class="course-desc">{{ course.description }}</p>
+              <div class="course-meta">
+                <span class="meta-item">{{ course.sections.length }}개 섹션</span>
+                <span class="meta-dot">·</span>
+                <span class="meta-item">{{ getTotalCount(course) }}개 주제</span>
+              </div>
+            </div>
+            <span class="course-arrow">→</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -63,7 +83,7 @@ function getTotalCount(course) {
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
         </div>
-        <p class="footer-copy">© 2026 Claude Study. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2026 Claude Study. All rights reserved.</p>
         <p class="footer-notice">본 자료는 교육 목적으로 제작되었으며, Anthropic 공식 문서가 아닙니다.</p>
       </div>
     </footer>
@@ -101,6 +121,42 @@ function getTotalCount(course) {
   max-width: 880px;
   margin: 0 auto;
   padding: 48px 24px 80px;
+}
+
+/* === Category Section === */
+.category-section {
+  margin-bottom: 48px;
+}
+
+.category-section:last-child {
+  margin-bottom: 0;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.category-badge {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.category-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
 }
 
 /* === Course Grid === */
@@ -145,11 +201,43 @@ function getTotalCount(course) {
   min-width: 0;
 }
 
+.course-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
 .course-title {
   font-size: 1.25rem;
   font-weight: 700;
   color: #1e293b;
-  margin-bottom: 6px;
+}
+
+.course-tags {
+  display: flex;
+  gap: 4px;
+}
+
+.course-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.02em;
+}
+
+.course-tag.cowork {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.course-tag.code {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
 }
 
 .course-desc {
@@ -199,6 +287,20 @@ function getTotalCount(course) {
 
   .home-body {
     padding: 24px 16px 60px;
+  }
+
+  .category-header {
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+
+  .category-badge {
+    font-size: 1.4rem;
+  }
+
+  .category-title {
+    font-size: 1.1rem;
   }
 
   .course-grid {
@@ -261,7 +363,6 @@ function getTotalCount(course) {
   width: 18px;
   height: 18px;
 }
-
 
 .sns-text {
   font-size: 0.9rem;

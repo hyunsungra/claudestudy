@@ -153,7 +153,7 @@
 
 .analogy-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;

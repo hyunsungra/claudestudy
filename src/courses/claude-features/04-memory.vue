@@ -211,7 +211,7 @@
 .warning-list { display: flex; flex-direction: column; gap: 12px; }
 .warning-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   background: #fef2f2;
   border: 1px solid #fecaca;

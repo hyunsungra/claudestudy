@@ -146,7 +146,7 @@
 .tag { background: rgba(99,102,241,0.15); color: #a5b4fc; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; border: 1px solid rgba(99,102,241,0.25); }
 
 /* === Analogy Box === */
-.analogy-box { display: flex; align-items: flex-start; gap: 16px; background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.analogy-box { display: flex; align-items: center; gap: 16px; background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 24px; margin: 20px 0; }
 .analogy-box > .analogy-icon { font-size: 2rem; flex-shrink: 0; }
 .analogy-content strong { display: block; font-size: 1.05rem; color: #1e40af; margin-bottom: 6px; }
 .analogy-content p { margin: 0 !important; font-size: 0.95rem; color: #334155; line-height: 1.7; }
@@ -202,7 +202,7 @@
   .model-cards { grid-template-columns: 1fr; }
   .save-grid { grid-template-columns: 1fr; }
   .analogy-box { flex-direction: column; gap: 12px; }
-  .progress-step { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .progress-step { flex-direction: column; align-items: center; gap: 8px; }
   .progress-bar { width: 100% !important; min-width: unset; }
 }
 </style>

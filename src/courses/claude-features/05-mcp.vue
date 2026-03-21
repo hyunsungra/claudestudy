@@ -168,7 +168,7 @@ MCP 서버를 설정해줘. 주소는 localhost:5432야.</pre>
 
 .analogy-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;

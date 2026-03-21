@@ -372,7 +372,7 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
 }
 .highlight-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -452,7 +452,7 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
 /* === Tip Box === */
 .tip-box {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
@@ -474,7 +474,7 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
 /* === Feature Header (for mock sections) === */
 .feature-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   margin-bottom: 16px;
 }
@@ -579,7 +579,7 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
   display: flex;
   gap: 10px;
   margin-bottom: 16px;
-  align-items: flex-start;
+  align-items: center;
 }
 .mock-msg:last-child { margin-bottom: 0; }
 .mock-msg.compact { margin-bottom: 0; }
@@ -728,7 +728,7 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
   padding: 16px;
   border-right: 1px solid #e2e8f0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 .mock-artifact-panel {
   flex: 1;

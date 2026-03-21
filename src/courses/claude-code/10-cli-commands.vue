@@ -108,6 +108,6 @@
   .hero-section { padding: 36px 20px 32px; }
   .hero-section h1 { font-size: 1.6rem; }
   .shortcut-grid { grid-template-columns: 1fr; }
-  .cmd-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .cmd-header { flex-direction: column; align-items: center; gap: 8px; }
 }
 </style>

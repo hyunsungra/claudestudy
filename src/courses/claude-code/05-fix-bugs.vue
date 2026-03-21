@@ -148,7 +148,7 @@ TypeError: Cannot read properties of undefined (reading 'map')
 .tag { background: rgba(99,102,241,0.15); color: #a5b4fc; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; border: 1px solid rgba(99,102,241,0.25); }
 
 /* === Key Message === */
-.key-message { display: flex; align-items: flex-start; gap: 16px; background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.key-message { display: flex; align-items: center; gap: 16px; background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 24px; margin: 20px 0; }
 .key-icon { font-size: 2rem; flex-shrink: 0; }
 .key-message p { margin: 0 !important; font-size: 1rem; color: #334155; line-height: 1.7; }
 .key-message strong { color: #1e40af; }
@@ -164,7 +164,7 @@ TypeError: Cannot read properties of undefined (reading 'map')
 
 /* === Step Cards === */
 .step-cards { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
-.step-card { display: flex; align-items: flex-start; gap: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 24px; transition: border-color 0.2s, transform 0.2s; }
+.step-card { display: flex; align-items: center; gap: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 24px; transition: border-color 0.2s, transform 0.2s; }
 .step-card:hover { border-color: #93c5fd; transform: translateY(-2px); }
 .step-number { width: 36px; height: 36px; background: linear-gradient(135deg, #3b82f6, #6366f1); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; flex-shrink: 0; }
 .step-body strong { display: block; font-size: 1.05rem; color: #1e293b; margin-bottom: 4px; }

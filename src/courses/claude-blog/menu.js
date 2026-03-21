@@ -3,33 +3,24 @@ export default {
   description: 'Claude를 활용해서 블로그 글을 작성하는 실전 활용법',
   icon: '✍️',
   basePath: '/claude-blog',
+  tags: ['코워크'],
   sections: [
     {
-      title: '준비',
+      title: '따라하기',
       items: [
-        { path: '01-concept', title: '자동화 컨셉 이해하기' },
+        { path: '01-concept', title: 'Step 1. 자동화 컨셉 이해하기' },
+        { path: '02-cowork-setup', title: 'Step 2. 페르소나 생성하기' },
+        { path: '03-create-skill', title: 'Step 3. 글쓰기 스킬 만들기' },
+        { path: '04-write-post', title: 'Step 4. 실제 사용하기' },
       ]
     },
     {
-      title: '코워크로 만들기',
-      items: [
-        { path: '02-cowork-setup', title: '참고 문서 추가와 스킬 생성' },
-        { path: '03-cowork-write', title: '주제를 던져서 글 작성하기' },
-      ]
-    },
-    {
-      title: '코드로 만들기',
-      items: [
-        { path: '04-code-setup', title: '글쓰기 스킬과 참고 자료 세팅' },
-        { path: '05-code-write', title: '블로그 글을 파일로 만들기' },
-      ]
-    },
-    {
-      title: '기능 고도화',
+      title: '더 활용하기',
       items: [
         { path: '06-topic-management', title: '주제 관리와 진행 추적' },
-        { path: '07-parallel-writing', title: '서브에이전트로 대량 작성' },
-        { path: '08-image-generation', title: 'API로 첨부 이미지 생성' },
+        { path: '09-auto-review', title: '작성한 내용 자동 검증하기' },
+        { path: '08-image-generation', title: '첨부 이미지 만들기' },
+        { path: '07-parallel-writing', title: '서브에이전트로 병렬 작성' },
       ]
     }
   ]

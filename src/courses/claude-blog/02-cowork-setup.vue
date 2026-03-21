@@ -1,112 +1,171 @@
 <template>
   <div class="page-content">
-    <!-- Hero Section -->
     <div class="hero-section">
-      <div class="hero-icon">📂</div>
-      <h1>참고 문서 추가와 스킬 생성</h1>
-      <p class="hero-desc">코워크에 내 글을 넣어주고, 글쓰기 스킬을 만드는 과정입니다.</p>
+      <div class="hero-icon">🎭</div>
+      <h1>페르소나 생성하기</h1>
+      <p class="hero-desc">내 글쓰기 스타일을 분석해서 페르소나 문서를 만듭니다.</p>
     </div>
 
-    <!-- 1단계 -->
-    <section class="section-slide">
+    <!-- 코워크 실행 -->
+    <section>
       <div class="step-header">
         <div class="step-circle">1</div>
-        <h2 class="section-title">작성했던 글 파일 준비</h2>
+        <h2>작업 폴더 생성</h2>
       </div>
-      <p class="section-desc">내가 이전에 쓴 블로그 글을 파일로 준비합니다. 형식은 상관없습니다.</p>
+      <p>블로그 글쓰기 자동화에 사용할 폴더를 <strong>바탕화면</strong>에 만듭니다.</p>
 
-      <div class="folder-card">
-        <div class="folder-title">📁 폴더 구조 예시</div>
-        <div class="folder-tree">
-          <div class="tree-item root">블로그자료/</div>
-          <div class="tree-item file">📄 글01_AI업무활용.md</div>
-          <div class="tree-item file">📄 글02_재택근무팁.md</div>
-          <div class="tree-item file">📄 글03_생산성도구.md</div>
-          <div class="tree-item file">📄 글04_커리어전환.md</div>
-          <div class="tree-item file last">📄 글05_사이드프로젝트.md</div>
+      <div class="manual-action">
+        <div class="manual-icon">📁</div>
+        <div class="manual-text">
+          <strong>직접 할 일</strong>
+          <p>바탕화면에 <code>블로그자동화</code> 폴더를 만드세요.</p>
+        </div>
+      </div>
+
+      <div class="checkpoint mini">
+        <span class="checkpoint-icon">✅</span>
+        <span class="checkpoint-text-inline">작업 폴더가 만들어졌으면 다음으로</span>
+      </div>
+    </section>
+
+    <!-- 코워크에 폴더 지정 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">2</div>
+        <h2>코워크에 작업 폴더 지정</h2>
+      </div>
+      <p>Claude Desktop 앱을 열고 <strong>Cowork 탭</strong>으로 이동합니다. 방금 만든 폴더를 작업 폴더로 지정하세요.</p>
+
+      <div class="image-box">
+        <img src="/coworkfoldersetup.png" alt="코워크에서 작업 폴더 지정하는 방법" />
+      </div>
+
+      <div class="checkpoint mini">
+        <span class="checkpoint-icon">✅</span>
+        <span class="checkpoint-text-inline">코워크에 작업 폴더가 지정되었으면 다음으로</span>
+      </div>
+    </section>
+
+    <!-- 샘플 글 폴더 생성 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">3</div>
+        <h2>샘플 글 폴더 만들기</h2>
+      </div>
+      <p>내 글 파일을 넣을 하위 폴더를 생성합니다. 아래 프롬프트를 복사해서 코워크에 붙여넣으세요.</p>
+
+      <div class="prompt-card">
+        <div class="prompt-label">코워크에 입력</div>
+        <div class="code-block good">
+          <pre>현재 폴더 하위에 docsample 폴더를 생성해줘</pre>
+        </div>
+      </div>
+
+      <div class="checkpoint mini">
+        <span class="checkpoint-icon">✅</span>
+        <span class="checkpoint-text-inline">docsample 폴더가 생성되었으면 다음으로</span>
+      </div>
+    </section>
+
+    <!-- 파일 복사 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">4</div>
+        <h2>글 파일 넣기</h2>
+      </div>
+      <p>Step 1에서 준비한 <strong>txt 파일 3~5개</strong>를 방금 만든 <code>docsample</code> 폴더에 복사해서 넣으세요.</p>
+
+      <div class="manual-action">
+        <div class="manual-icon">📂</div>
+        <div class="manual-text">
+          <strong>직접 할 일</strong>
+          <p>파일 탐색기에서 txt 파일들을 <code>docsample</code> 폴더로 복사합니다.</p>
+        </div>
+      </div>
+
+      <div class="folder-preview">
+        <div class="folder-title">docsample/</div>
+        <div class="folder-files">
+          <span class="file-tag">📄 글01_AI업무활용.txt</span>
+          <span class="file-tag">📄 글02_재택근무팁.txt</span>
+          <span class="file-tag">📄 글03_생산성도구.txt</span>
+        </div>
+      </div>
+
+      <div class="checkpoint mini">
+        <span class="checkpoint-icon">✅</span>
+        <span class="checkpoint-text-inline">docsample 폴더에 txt 파일이 들어있으면 다음으로</span>
+      </div>
+    </section>
+
+    <!-- 페르소나 생성 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">5</div>
+        <h2>페르소나 생성 요청</h2>
+      </div>
+      <p>이제 Claude에게 내 글을 분석해서 페르소나 문서를 만들어달라고 합니다. 아래 프롬프트를 복사해서 코워크에 붙여넣으세요.</p>
+
+      <div class="prompt-card highlight">
+        <div class="prompt-label">코워크에 입력 (핵심 프롬프트)</div>
+        <div class="code-block good">
+          <pre>docsample 폴더에 있는 모든 파일을 읽고 분석해줘.
+
+분석 내용:
+1. 글쓴이의 문체 특징 (격식체/반말체, 톤, 유머 정도)
+2. 글의 구성 패턴 (도입-본문-마무리를 어떻게 쓰는지)
+3. 자주 사용하는 표현, 말투, 습관적으로 쓰는 단어
+4. 소제목과 문단 나누는 스타일
+5. 한 글의 평균 길이와 깊이
+
+분석이 끝나면, 이 글쓴이의 스타일을 완벽하게 재현할 수 있도록
+"페르소나.md" 파일을 만들어줘.
+
+페르소나.md에는 다음이 포함되어야 해:
+- 글쓰기 스타일 요약
+- 톤 앤 매너 규칙
+- 문장 구성 규칙
+- 꼭 지켜야 할 특징
+- 피해야 할 것들</pre>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 결과 확인 -->
+    <section>
+      <div class="step-header">
+        <div class="step-circle">6</div>
+        <h2>결과 확인</h2>
+      </div>
+      <p>작업이 끝나면 폴더에 <code>페르소나.md</code> 파일이 생성되어 있습니다. 열어서 내 스타일이 잘 정리되었는지 확인하세요.</p>
+
+      <div class="result-preview">
+        <div class="result-header">📄 페르소나.md (예시) <span class="result-notice">실제 내용은 내 글 스타일에 따라 달라집니다</span></div>
+        <div class="result-body">
+          <p class="result-line"><strong># 글쓰기 페르소나</strong></p>
+          <p class="result-line dimmed">## 스타일 요약</p>
+          <p class="result-line dimmed">친근하면서도 전문적인 톤. 개인 경험을 도입부에 넣어 공감을 이끌고...</p>
+          <p class="result-line dimmed">## 톤 앤 매너</p>
+          <p class="result-line dimmed">- 해요체 사용 (~~합니다 체 아님)</p>
+          <p class="result-line dimmed">- 적절한 유머와 비유 활용...</p>
         </div>
       </div>
 
       <div class="tip-card">
         <span class="tip-icon">💡</span>
-        <div>
-          <strong>팁:</strong> 글이 많을수록 Claude가 내 스타일을 더 정확하게 파악합니다. 최소 3개, 가능하면 5개 이상 넣어주세요.
-        </div>
+        <div>페르소나가 마음에 안 들면 <strong>"페르소나를 좀 더 캐주얼하게 수정해줘"</strong>처럼 꼭 <strong>페르소나를</strong> 붙여서 요청하세요. 여러 번 다듬을수록 정확해집니다.</div>
       </div>
     </section>
 
-    <!-- 2단계 -->
-    <section class="section-slide">
-      <div class="step-header">
-        <div class="step-circle">2</div>
-        <h2 class="section-title">코워크에서 작업 폴더 지정</h2>
+    <!-- 최종 체크포인트 -->
+    <div class="checkpoint">
+      <div class="checkpoint-icon-big">🎉</div>
+      <div class="checkpoint-content">
+        <strong>페르소나.md 파일 생성 완료!</strong>
+        <p>내 글쓰기 스타일이 문서로 정리되었습니다. 다음 단계에서 이 페르소나를 활용해서 실제로 글을 작성합니다.</p>
       </div>
-      <div class="action-cards">
-        <div class="action-card">
-          <div class="action-num">A</div>
-          <div class="action-text">Claude Desktop을 열고 <strong>Cowork 탭</strong>으로 이동</div>
-        </div>
-        <div class="action-card">
-          <div class="action-num">B</div>
-          <div class="action-text">새 작업 공간을 만들고, 위 글 파일이 있는 <strong>폴더를 작업 폴더로 지정</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3단계 -->
-    <section class="section-slide">
-      <div class="step-header">
-        <div class="step-circle">3</div>
-        <h2 class="section-title">글쓰기 스킬 생성 요청</h2>
-      </div>
-      <p class="section-desc">Claude에게 내 글을 분석하고 글쓰기 스킬을 만들어달라고 합니다.</p>
-
-      <div class="prompt-card">
-        <div class="prompt-label">💬 코워크에 이렇게 말하세요</div>
-        <div class="code-block good">
-          <pre>이 폴더에 있는 블로그 글 파일들을 전부 읽고,
-내 글쓰기 패턴을 분석해줘.
-
-분석할 것:
-- 글의 구성 (도입-본문-마무리 패턴)
-- 문체와 톤 (격식체/반말, 유머 정도 등)
-- 자주 쓰는 표현이나 말투
-- 한 글의 평균 길이
-- 소제목 사용 패턴
-
-분석 결과를 바탕으로,
-앞으로 내 스타일대로 블로그 글을 작성해주는
-글쓰기 스킬을 만들어줘.</pre>
-        </div>
-      </div>
-
-      <div class="analysis-cards">
-        <div class="analysis-title">Claude가 분석하는 것들</div>
-        <div class="analysis-grid">
-          <div class="analysis-item"><span class="a-icon">📋</span><span>글 구성 패턴</span></div>
-          <div class="analysis-item"><span class="a-icon">🗣️</span><span>문체와 톤</span></div>
-          <div class="analysis-item"><span class="a-icon">✍️</span><span>자주 쓰는 표현</span></div>
-          <div class="analysis-item"><span class="a-icon">📏</span><span>평균 글 길이</span></div>
-          <div class="analysis-item"><span class="a-icon">🏷️</span><span>소제목 패턴</span></div>
-        </div>
-      </div>
-
-      <p class="section-desc">Claude가 글을 전부 읽고 패턴을 파악한 뒤, 글쓰기 규칙이 담긴 스킬을 만들어줍니다.</p>
-    </section>
-
-    <!-- 스킬 확인 -->
-    <section class="section-slide">
-      <h2 class="section-title">만들어진 스킬 확인</h2>
-      <p class="section-desc">스킬이 잘 만들어졌는지 확인하고, 필요하면 수정을 요청하세요.</p>
-
-      <div class="prompt-card">
-        <div class="prompt-label">🔧 수정 요청 예시</div>
-        <div class="code-block">
-          <pre>글 도입부에 항상 개인 경험을 넣는 패턴이 빠졌어.
-그것도 규칙에 추가해줘.</pre>
-        </div>
-      </div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -122,12 +181,8 @@
 .hero-section h1 { color: #f1f5f9; margin-bottom: 12px; }
 .hero-desc { color: #94a3b8 !important; font-size: 1.15rem; margin-bottom: 0 !important; }
 
-.section-slide { margin-bottom: 48px; }
-.section-title { font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0; }
-.section-desc { color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px; }
-
 /* Step Header */
-.step-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.step-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
 .step-circle {
   flex-shrink: 0;
   width: 40px; height: 40px;
@@ -136,26 +191,133 @@
   display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem; font-weight: 700;
 }
+.step-header h2 { margin: 0; font-size: 1.3rem; }
 
-/* Folder Card */
-.folder-card {
+/* Prompt Card */
+.prompt-card {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 20px 24px;
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
-.folder-title { font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 1rem; }
-.folder-tree { padding-left: 8px; }
-.tree-item { padding: 4px 0; font-family: 'Pretendard', monospace; font-size: 0.93rem; color: #475569; }
-.tree-item.root { font-weight: 700; color: #1e293b; margin-bottom: 4px; }
-.tree-item.file { padding-left: 20px; }
+.prompt-card.highlight {
+  background: #fffbeb;
+  border-color: #fcd34d;
+}
+.prompt-label {
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+  font-size: 0.92rem;
+}
+
+/* Manual Action */
+.manual-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 16px 0;
+}
+.manual-icon { font-size: 1.6rem; flex-shrink: 0; }
+.manual-text strong { display: block; color: #92400e; margin-bottom: 4px; }
+.manual-text p { color: #a16207; font-size: 0.9rem; margin: 0 !important; line-height: 1.5; }
+
+/* Folder Preview */
+.folder-preview {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 16px 0;
+}
+.folder-title {
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.folder-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.file-tag {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* Wait Card */
+.wait-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-top: 16px;
+}
+.wait-icon { font-size: 1.6rem; flex-shrink: 0; }
+.wait-text strong { display: block; color: #0c4a6e; margin-bottom: 4px; }
+.wait-text p { color: #0369a1; font-size: 0.9rem; margin: 0 !important; line-height: 1.5; }
+
+/* Result Preview */
+.result-preview {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 20px;
+  font-weight: 700;
+  color: #334155;
+  font-size: 0.92rem;
+}
+.result-notice {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid #fcd34d;
+}
+.result-body {
+  padding: 16px 20px;
+}
+.result-line {
+  font-size: 0.88rem;
+  color: #1e293b;
+  margin-bottom: 6px !important;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  line-height: 1.5;
+}
+.result-line.dimmed {
+  color: #94a3b8;
+}
 
 /* Tip Card */
 .tip-card {
   display: flex;
   gap: 12px;
-  align-items: flex-start;
+  align-items: center;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
   border-radius: 12px;
@@ -166,72 +328,54 @@
 }
 .tip-icon { font-size: 1.3rem; flex-shrink: 0; }
 
-/* Action Cards */
-.action-cards { display: flex; flex-direction: column; gap: 12px; }
-.action-card {
-  display: flex; align-items: center; gap: 16px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 18px 22px;
-  transition: border-color 0.2s, transform 0.2s;
+/* Mini Checkpoint */
+.checkpoint.mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 16px 0;
 }
-.action-card:hover { border-color: #93c5fd; transform: translateY(-2px); }
-.action-num {
-  flex-shrink: 0;
-  width: 36px; height: 36px;
-  background: #e0e7ff; color: #3730a3;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 0.95rem;
+.checkpoint.mini .checkpoint-icon { font-size: 1.2rem; }
+.checkpoint-text-inline {
+  color: #166534;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
-.action-text { color: #334155; font-size: 0.98rem; }
 
-/* Prompt Card */
-.prompt-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px 24px;
-  margin-bottom: 20px;
-}
-.prompt-label { font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 1rem; }
-
-/* Analysis Cards */
-.analysis-cards {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+/* Final Checkpoint */
+.checkpoint {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid #86efac;
   border-radius: 12px;
   padding: 24px;
-  margin-bottom: 20px;
+  margin-top: 32px;
 }
-.analysis-title { font-weight: 700; color: #1e293b; margin-bottom: 16px; text-align: center; }
-.analysis-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+.checkpoint-icon-big { font-size: 2.2rem; flex-shrink: 0; }
+.checkpoint-content strong {
+  display: block;
+  color: #166534;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
 }
-.analysis-item {
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 14px 8px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #334155;
-  text-align: center;
-  transition: border-color 0.2s, transform 0.2s;
+.checkpoint-content p {
+  color: #15803d;
+  font-size: 0.9rem;
+  margin: 0 !important;
+  line-height: 1.5;
 }
-.analysis-item:hover { border-color: #93c5fd; transform: translateY(-2px); }
-.a-icon { font-size: 1.4rem; }
 
 @media (max-width: 768px) {
   .hero-section { padding: 32px 18px 28px; }
   .hero-section h1 { font-size: 1.4rem; }
-  .analysis-grid { grid-template-columns: repeat(2, 1fr); }
-  .step-header { gap: 10px; }
+  .step-header h2 { font-size: 1.1rem; }
   .step-circle { width: 34px; height: 34px; font-size: 0.95rem; }
-  .action-card { padding: 14px 16px; }
+  .folder-files { flex-direction: column; }
 }
 </style>

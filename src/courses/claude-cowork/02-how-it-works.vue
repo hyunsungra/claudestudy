@@ -380,7 +380,7 @@
 .workflow-step {
   display: flex;
   gap: 20px;
-  align-items: flex-start;
+  align-items: center;
 }
 .workflow-number {
   width: 44px;
@@ -525,7 +525,7 @@
   }
   .agent-lane {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 6px;
   }
   .section-slide {
