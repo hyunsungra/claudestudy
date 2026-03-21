@@ -16,7 +16,6 @@ export default {
       items: [
         { path: '06-prompt-basics', title: '프롬프트의 기본 구조' },
         { path: '07-prompt-techniques', title: '효과적인 프롬프트 작성법' },
-        { path: '08-system-prompt', title: '시스템 프롬프트 활용' },
       ]
     },
   ]

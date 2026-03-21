@@ -129,6 +129,18 @@ body {
   margin: 8px 0 0;
 }
 
+/* === Image Box === */
+.image-box {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.image-box img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
 /* === Feature Grid === */
 .feature-grid {
   display: grid;

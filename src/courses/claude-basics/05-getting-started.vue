@@ -1,28 +1,71 @@
 <template>
   <div class="page-content">
-    <h1>Claude 시작하기</h1>
-    <p class="subtitle">지금 바로 Claude를 사용해봅시다.</p>
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-icon">🚀</div>
+      <h1>Claude 시작하기</h1>
+      <p class="hero-desc">지금 바로 Claude를 사용해봅시다.</p>
+    </div>
 
+    <!-- Claude 소개 -->
     <section>
       <h2>Claude 소개</h2>
       <p><strong>Claude</strong>는 미국 AI 기업 <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>이 개발한 대화형 AI 어시스턴트입니다. 자연어를 이해하고 생성할 수 있는 대규모 언어 모델(LLM)을 기반으로, 글쓰기, 코딩, 분석, 번역 등 다양한 작업을 수행합니다.</p>
-      <div class="info-box">
-        <p><strong>주요 특징:</strong> 최대 100만 토큰의 긴 문맥 처리, 이미지·PDF 등 멀티모달 입력 지원, AI 안전성 중심 설계</p>
+      <div class="feature-highlights">
+        <div class="highlight-item">
+          <span class="highlight-icon">📄</span>
+          <div>
+            <strong>긴 문맥 처리</strong>
+            <p>최대 100만 토큰</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🖼️</span>
+          <div>
+            <strong>멀티모달 입력</strong>
+            <p>이미지, PDF 등 지원</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🛡️</span>
+          <div>
+            <strong>AI 안전성</strong>
+            <p>안전 중심 설계</p>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- 1. 가입하기 -->
     <section>
       <h2>1. 가입하기</h2>
-      <ol>
-        <li><a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>에 접속합니다.</li>
-        <li>이메일 주소로 회원가입 또는 Google 계정으로 로그인합니다.</li>
-        <li>가입 즉시 무료로 Claude를 사용할 수 있습니다.</li>
-      </ol>
-      <div class="info-box">
-        <p><strong>팁:</strong> 무료 계정으로도 Sonnet 모델을 사용할 수 있으며, 일일 사용량 제한이 있습니다.</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-body">
+            <strong><a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>에 접속합니다.</strong>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-body">
+            <strong>이메일 주소로 회원가입</strong> 또는 Google 계정으로 로그인합니다.
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-body">
+            가입 즉시 <strong>무료로 Claude를 사용</strong>할 수 있습니다.
+          </div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <p>무료 계정으로도 Sonnet 모델을 사용할 수 있으며, 일일 사용량 제한이 있습니다.</p>
       </div>
     </section>
 
+    <!-- 2. 첫 대화 시작하기 -->
     <section>
       <h2>2. 첫 대화 시작하기</h2>
       <p>가입 후 바로 대화를 시작할 수 있습니다. 간단한 예시를 따라해보세요:</p>
@@ -34,13 +77,19 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
       </div>
     </section>
 
+    <!-- 3. 주요 기능 살펴보기 -->
     <section>
       <h2>3. 주요 기능 살펴보기</h2>
 
       <!-- 대화하기 Mock UI -->
       <div class="mock-feature">
-        <h3>대화하기</h3>
-        <p>질문을 입력하면 Claude가 답변합니다. 이전 대화 내용을 기억하고 이어서 대화할 수 있습니다.</p>
+        <div class="feature-header">
+          <span class="feature-badge">💬</span>
+          <div>
+            <h3>대화하기</h3>
+            <p>질문을 입력하면 Claude가 답변합니다. 이전 대화 내용을 기억하고 이어서 대화할 수 있습니다.</p>
+          </div>
+        </div>
         <div class="mock-chat">
           <div class="mock-chat-window">
             <div class="mock-chat-header">
@@ -80,8 +129,13 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
 
       <!-- 파일 첨부 Mock UI -->
       <div class="mock-feature">
-        <h3>파일 첨부</h3>
-        <p>PDF, 이미지, 코드 파일 등을 첨부하여 분석을 요청할 수 있습니다.</p>
+        <div class="feature-header">
+          <span class="feature-badge">📎</span>
+          <div>
+            <h3>파일 첨부</h3>
+            <p>PDF, 이미지, 코드 파일 등을 첨부하여 분석을 요청할 수 있습니다.</p>
+          </div>
+        </div>
         <div class="mock-upload">
           <div class="mock-chat-window">
             <div class="mock-chat-header">
@@ -130,8 +184,13 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
 
       <!-- 프로젝트 Mock UI -->
       <div class="mock-feature">
-        <h3>프로젝트</h3>
-        <p>관련 대화와 파일을 프로젝트로 묶어 체계적으로 관리할 수 있습니다.</p>
+        <div class="feature-header">
+          <span class="feature-badge">📁</span>
+          <div>
+            <h3>프로젝트</h3>
+            <p>관련 대화와 파일을 프로젝트로 묶어 체계적으로 관리할 수 있습니다.</p>
+          </div>
+        </div>
         <div class="mock-projects">
           <div class="mock-project-list">
             <div class="mock-project-item active">
@@ -162,8 +221,13 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
 
       <!-- 아티팩트 Mock UI -->
       <div class="mock-feature">
-        <h3>아티팩트</h3>
-        <p>Claude가 생성한 코드, 문서, 다이어그램 등을 별도 패널에서 확인하고 편집할 수 있습니다.</p>
+        <div class="feature-header">
+          <span class="feature-badge">🎨</span>
+          <div>
+            <h3>아티팩트</h3>
+            <p>Claude가 생성한 코드, 문서, 다이어그램 등을 별도 패널에서 확인하고 편집할 수 있습니다.</p>
+          </div>
+        </div>
         <div class="mock-artifact">
           <div class="mock-artifact-layout">
             <div class="mock-artifact-chat">
@@ -212,50 +276,242 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
       </div>
     </section>
 
+    <!-- 4. 사용 및 설치 방법 -->
     <section>
       <h2>4. 사용 및 설치 방법</h2>
-      <ul>
-        <li><a href="https://claude.ai" target="_blank" rel="noopener"><strong>claude.ai</strong></a> — 웹 브라우저에서 바로 대화</li>
-        <li><strong>Claude 데스크톱</strong> — <a href="https://claude.ai/download" target="_blank" rel="noopener">Windows / macOS</a> 데스크톱 앱</li>
-        <li><strong>Claude 모바일</strong> — <a href="https://apps.apple.com/app/claude/id6473753684" target="_blank" rel="noopener">iOS</a>, <a href="https://play.google.com/store/apps/details?id=com.anthropic.claude" target="_blank" rel="noopener">Android</a> 앱</li>
-        <li><a href="https://console.anthropic.com" target="_blank" rel="noopener"><strong>API</strong></a> — 개발자용 프로그래밍 인터페이스</li>
-        <li><strong>Claude Code</strong> — 터미널에서 사용하는 코딩 에이전트</li>
-      </ul>
+      <div class="platform-grid">
+        <a href="https://claude.ai" target="_blank" rel="noopener" class="platform-card">
+          <div class="platform-icon">🌐</div>
+          <strong>claude.ai</strong>
+          <p>웹 브라우저에서 바로 대화</p>
+        </a>
+        <a href="https://claude.ai/download" target="_blank" rel="noopener" class="platform-card">
+          <div class="platform-icon">🖥️</div>
+          <strong>데스크톱 앱</strong>
+          <p>Windows / macOS</p>
+        </a>
+        <div class="platform-card">
+          <div class="platform-icon">📱</div>
+          <strong>모바일 앱</strong>
+          <p><a href="https://apps.apple.com/app/claude/id6473753684" target="_blank" rel="noopener">iOS</a> · <a href="https://play.google.com/store/apps/details?id=com.anthropic.claude" target="_blank" rel="noopener">Android</a></p>
+        </div>
+        <a href="https://console.anthropic.com" target="_blank" rel="noopener" class="platform-card">
+          <div class="platform-icon">⚙️</div>
+          <strong>API</strong>
+          <p>개발자용 인터페이스</p>
+        </a>
+        <div class="platform-card">
+          <div class="platform-icon">💻</div>
+          <strong>Claude Code</strong>
+          <p>터미널 코딩 에이전트</p>
+        </div>
+      </div>
     </section>
 
+    <!-- 5. 실습해보기 -->
     <section>
       <h2>5. 실습해보기</h2>
       <p>아래 프롬프트를 직접 <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>에 입력해보세요:</p>
-      <div class="code-block">
-        <p class="code-label">실습 1: 이메일 작성</p>
-        <pre>다음 내용을 정중한 비즈니스 이메일로 작성해주세요:
+      <div class="practice-grid">
+        <div class="practice-card">
+          <div class="practice-header">
+            <span class="practice-num">실습 1</span>
+            <span class="practice-title">이메일 작성</span>
+          </div>
+          <div class="code-block">
+            <pre>다음 내용을 정중한 비즈니스 이메일로 작성해주세요:
 - 받는 사람: 김팀장님
 - 내용: 다음 주 월요일 회의를 수요일로 변경 요청
 - 이유: 출장 일정 겹침</pre>
-      </div>
-      <div class="code-block">
-        <p class="code-label">실습 2: 텍스트 요약</p>
-        <pre>다음 텍스트를 3줄로 요약해주세요:
+          </div>
+        </div>
+        <div class="practice-card">
+          <div class="practice-header">
+            <span class="practice-num">실습 2</span>
+            <span class="practice-title">텍스트 요약</span>
+          </div>
+          <div class="code-block">
+            <pre>다음 텍스트를 3줄로 요약해주세요:
 [여기에 긴 텍스트를 붙여넣으세요]</pre>
+          </div>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <style scoped>
-/* === Mock Feature Block === */
-.mock-feature {
+/* === Hero Section === */
+.hero-section {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-radius: 16px;
+  padding: 48px 36px 40px;
+  text-align: center;
   margin-bottom: 40px;
 }
-.mock-feature h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #2563eb;
-  margin-bottom: 8px;
+.hero-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
 }
-.mock-feature > p {
-  color: #4b5563;
+.hero-section h1 {
+  color: #f1f5f9;
+  margin-bottom: 12px;
+}
+.hero-desc {
+  color: #94a3b8 !important;
+  font-size: 1.15rem;
+  margin-bottom: 0 !important;
+}
+
+/* === Feature Highlights === */
+.feature-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.highlight-item:hover {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+}
+.highlight-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.highlight-item strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+.highlight-item p {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* === Step Cards === */
+.step-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.step-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: border-color 0.2s;
+}
+.step-card:hover {
+  border-color: #93c5fd;
+}
+.step-number {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.step-body {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.6;
+}
+.step-body a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+.step-body a:hover {
+  text-decoration: underline;
+}
+
+/* === Tip Box === */
+.tip-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+.tip-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+.tip-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #1e40af;
+  line-height: 1.6;
+}
+
+/* === Feature Header (for mock sections) === */
+.feature-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
   margin-bottom: 16px;
+}
+.feature-badge {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #f0f7ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+.feature-header p {
+  color: #64748b;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* === Mock Feature Block === */
+.mock-feature {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: border-color 0.2s;
+}
+.mock-feature:hover {
+  border-color: #93c5fd;
 }
 
 /* === Shared Mock Window === */
@@ -327,7 +583,6 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
 }
 .mock-msg:last-child { margin-bottom: 0; }
 .mock-msg.compact { margin-bottom: 0; }
-
 .mock-avatar {
   width: 32px;
   height: 32px;
@@ -347,7 +602,6 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
   background: #d4a574;
   color: #fff;
 }
-
 .mock-bubble {
   padding: 10px 14px;
   border-radius: 12px;
@@ -566,8 +820,107 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
   color: #9ca3af;
 }
 
+/* === Platform Grid === */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+.platform-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.platform-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+}
+.platform-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.platform-card strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+.platform-card p {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0;
+}
+.platform-card p a {
+  color: #2563eb;
+  text-decoration: none;
+}
+.platform-card p a:hover {
+  text-decoration: underline;
+}
+
+/* === Practice Grid === */
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 16px;
+}
+.practice-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.practice-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+}
+.practice-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+.practice-num {
+  background: rgba(255,255,255,0.15);
+  color: #93c5fd;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.practice-title {
+  color: #f1f5f9;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.practice-card .code-block {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 36px 20px 32px;
+  }
+  .hero-icon {
+    font-size: 2.4rem;
+  }
+  .feature-highlights {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
   .mock-artifact-layout {
     flex-direction: column;
   }
@@ -579,6 +932,25 @@ AI가 제 업무에 어떻게 도움이 될 수 있는지
   }
   .mock-file-chips {
     flex-direction: column;
+  }
+  .platform-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+  .mock-feature {
+    padding: 16px;
+  }
+  .feature-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .feature-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
   }
 }
 </style>
