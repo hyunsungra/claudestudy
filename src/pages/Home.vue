@@ -85,6 +85,21 @@ function getTotalCount(course) {
         </div>
         <p class="footer-copy">&copy; 2026 Claude Study. All rights reserved.</p>
         <p class="footer-notice">본 자료는 교육 목적으로 제작되었으며, Anthropic 공식 문서가 아닙니다.</p>
+
+        <div class="footer-family">
+          <h4 class="footer-family-title">Family Sites</h4>
+          <div class="footer-family-list">
+            <a href="https://jabayo.com" target="_blank" rel="noopener">콜드메일 마케팅 예약 설문 페이지를 한번에 잡아요</a>
+            <span class="footer-family-sep">|</span>
+            <a href="https://signpass.kr" target="_blank" rel="noopener">전자계약 근로계약서 양식 작성 SIGNPASS 싸인패스</a>
+            <span class="footer-family-sep">|</span>
+            <a href="https://barosquare.com" target="_blank" rel="noopener">키오스크 디지털사이니지 DID시스템 바로스퀘어 barosquare</a>
+            <span class="footer-family-sep">|</span>
+            <a href="https://toritosystem.com" target="_blank" rel="noopener">앱개발 프로그램 어플 제작 개발 업체 토리토시스템</a>
+            <span class="footer-family-sep">|</span>
+            <a href="https://marketingeye.co.kr" target="_blank" rel="noopener">AI 블로그 글쓰기 마케팅아이</a>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
@@ -379,5 +394,43 @@ function getTotalCount(course) {
   font-size: 0.75rem;
   color: #64748b;
   margin: 0;
+}
+
+.footer-family {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-family-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.footer-family-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.footer-family-list a {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-family-list a:hover {
+  color: #60a5fa;
+}
+
+.footer-family-sep {
+  font-size: 0.7rem;
+  color: #475569;
 }
 </style>
